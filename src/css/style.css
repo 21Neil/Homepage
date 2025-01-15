@@ -23,6 +23,7 @@
 body {
   font-family: "Roboto";
   color: #222;
+  font-weight: 300;
 }
 
 h1,
@@ -41,12 +42,13 @@ h2 {
 }
 
 p {
-  color: #777777;
+  color: #4e4e4e;
 }
 
 img {
   max-width: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .about-me {
@@ -56,6 +58,12 @@ img {
 .about-me__img {
   padding: 2em;
   position: relative;
+}
+
+.about-me__img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background: rgb(100, 134, 173);
   background: linear-gradient(
     150deg,
@@ -66,10 +74,9 @@ img {
   );
 }
 
-.about-me__img::before {
-  content: '';
+.about-me__img::after {
+  content: "";
   position: absolute;
-  background: rgb(100, 134, 173);
   inset: 0;
   background: linear-gradient(
     150deg,
@@ -106,8 +113,8 @@ img {
 }
 
 .about-me__text p {
-  font-size: 1.6em;
-  line-height: 1.6em;
+  font-size: 1.4rem;
+  line-height: 1.4em;
 }
 
 .about-me__links {
@@ -125,7 +132,7 @@ img {
 }
 
 .card {
-  box-shadow: .185em .185em .625em rgb(205, 205, 205);
+  box-shadow: 0.185em 0.185em 0.625em rgb(205, 205, 205);
   margin-bottom: 5em;
 }
 
@@ -158,9 +165,12 @@ img {
   font-size: 1.2rem;
 }
 
+footer {
+  background-color: rgb(100, 134, 173);
+}
+
 .contact-me {
   padding: 0 1.5em;
-  background-color: rgb(100, 134, 173);
   color: #fdfdfd;
   overflow: auto;
 }
@@ -190,6 +200,10 @@ img {
   margin: 0.5em 0;
 }
 
+.contact-me__phone-and-email p span {
+  display: none;
+}
+
 .contact-me__links {
   display: flex;
   flex-direction: row;
@@ -211,5 +225,158 @@ img {
 @media (max-width: 300px) {
   :root {
     font-size: 12px;
+  }
+}
+
+@media (min-width: 577px) {
+  .about-me {
+    isolation: isolate;
+  }
+
+  .about-me__img {
+    padding: 3em 2em;
+    margin-bottom: 4em;
+  }
+
+  .about-me__img::before {
+    min-height: 600px;
+    z-index: -1;
+    background: rgb(100, 134, 173);
+    background: linear-gradient(
+      160deg,
+      rgba(100, 134, 173, 1) 0%,
+      rgba(100, 134, 173, 1) 60%,
+      rgba(255, 255, 255, 0) 60.2%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .about-me__img::after {
+    min-height: 600px;
+    z-index: -2;
+    background: linear-gradient(
+      160deg,
+      rgb(230, 230, 230) 0%,
+      rgb(230, 230, 230) 60%,
+      rgb(240, 240, 240) 61%,
+      rgb(255, 255, 255) 62%,
+      rgba(255, 255, 255) 100%
+    );
+  }
+
+  .about-me__img .container {
+    width: 50%;
+    float: left;
+    margin-right: 1em;
+  }
+
+  .about-me__img p {
+    top: 20px;
+    right: -32px;
+    left: auto;
+    bottom: auto;
+  }
+
+  .about-me__text {
+    box-shadow: 0.185em 0.185em 0.625em rgb(205, 205, 205);
+    margin: 0 4em;
+    background-color: #fff;
+    padding: 4em 2em;
+  }
+
+  .about-me__text p {
+    font-size: 1.5rem;
+    line-height: 1.5em;
+  }
+
+  .about-me__links {
+    display: none;
+  }
+
+  .my-work {
+    padding: 0 4em;
+    margin-bottom: 15em;
+  }
+
+  .card {
+    margin-bottom: 2em;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3em;
+  }
+
+  .card__text {
+    min-height: 150px;
+  }
+
+  .card__text p {
+    font-size: 1rem;
+  }
+
+  .card__title h2 {
+    margin: 0;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .contact-me {
+    margin-top: 4em;
+    margin-left: 1em;
+    padding: 0 1em;
+  }
+
+  .contact-me h1 {
+    text-align-last: left;
+  }
+
+  .contact-me__description {
+    font-size: 1.2rem;
+  }
+
+  .contact-me__address,
+  .contact-me__phone-and-email {
+    font-weight: 300;
+    margin-bottom: 2em;
+  }
+
+  .contact-me__phone::before,
+  .contact-me__email::before {
+    content: "";
+    display: inline-block;
+    vertical-align: baseline;
+    width: 30px;
+    height: 30px;
+    background: white;
+  }
+
+  .contact-me__phone,
+  .contact-me__email {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .contact-me__phone::before {
+    mask-image: url(../asset/icon/phone-outline.svg);
+  }
+
+  .contact-me__email::before {
+    mask-image: url(../asset/icon/email-outline.svg);
+  }
+
+  .contact-me__links {
+    justify-content: start;
+  }
+
+  .footer-img-container {
+    margin: 2em;
+    display: flex;
+    align-items: center;
   }
 }
