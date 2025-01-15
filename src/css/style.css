@@ -53,14 +53,10 @@ img {
 
 .about-me {
   margin-bottom: 8em;
-}
-
-.about-me__img {
-  padding: 2em;
   position: relative;
 }
 
-.about-me__img::before {
+.about-me::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -68,28 +64,33 @@ img {
   background: linear-gradient(
     150deg,
     rgba(100, 134, 173, 1) 0%,
-    rgba(100, 134, 173, 1) 60%,
-    rgba(255, 255, 255, 0) 60.2%,
+    rgba(100, 134, 173, 1) 33%,
+    rgba(255, 255, 255, 0) 33.2%,
     rgba(255, 255, 255, 0) 100%
   );
 }
 
-.about-me__img::after {
+.about-me::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     150deg,
     rgb(230, 230, 230) 0%,
-    rgb(230, 230, 230) 60%,
-    rgb(240, 240, 240) 61%,
-    rgb(255, 255, 255) 62%,
+    rgb(230, 230, 230) 33%
+    rgb(240, 240, 240) 34%
+    rgb(255, 255, 255) 35%
     rgba(255, 255, 255) 100%
   );
   z-index: -1;
 }
 
-.about-me__img .container {
+.about-me__img {
+  padding: 2em;
+  position: relative;
+}
+
+.about-me__img .about-me__img-container {
   position: relative;
 }
 
@@ -132,7 +133,7 @@ img {
 }
 
 .card {
-  box-shadow: 0.185em 0.185em 0.625em rgb(205, 205, 205);
+  box-shadow: 0.185em 0.185em 0.625em rgb(175, 175, 175);
   margin-bottom: 5em;
 }
 
@@ -233,39 +234,40 @@ footer {
     isolation: isolate;
   }
 
-  .about-me__img {
-    padding: 3em 2em;
-    margin-bottom: 4em;
-  }
-
-  .about-me__img::before {
+  .about-me::before {
     min-height: 600px;
     z-index: -1;
     background: rgb(100, 134, 173);
     background: linear-gradient(
       160deg,
       rgba(100, 134, 173, 1) 0%,
-      rgba(100, 134, 173, 1) 60%,
-      rgba(255, 255, 255, 0) 60.2%,
+      rgba(100, 134, 173, 1) 33%,
+      rgba(255, 255, 255, 0) 33.2%,
       rgba(255, 255, 255, 0) 100%
     );
   }
 
-  .about-me__img::after {
+  .about-me::after {
     min-height: 600px;
     z-index: -2;
     background: linear-gradient(
       160deg,
       rgb(230, 230, 230) 0%,
-      rgb(230, 230, 230) 60%,
-      rgb(240, 240, 240) 61%,
-      rgb(255, 255, 255) 62%,
+      rgb(230, 230, 230) 33%,
+      rgb(240, 240, 240) 34%,
+      rgb(255, 255, 255) 35%,
       rgba(255, 255, 255) 100%
     );
   }
 
-  .about-me__img .container {
+  .about-me__img {
+    padding: 3em 2em;
+    margin-bottom: 4em;
+  }
+
+  .about-me__img .about-me__img-container {
     width: 50%;
+    max-width: 512px;
     float: left;
     margin-right: 1em;
   }
@@ -278,7 +280,7 @@ footer {
   }
 
   .about-me__text {
-    box-shadow: 0.185em 0.185em 0.625em rgb(205, 205, 205);
+    box-shadow: 0.185em 0.185em 0.625em rgb(175, 175, 175);
     margin: 0 4em;
     background-color: #fff;
     padding: 4em 2em;
@@ -320,9 +322,11 @@ footer {
     margin: 0;
   }
 
-  footer {
+  footer .container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    gap: 2em;
   }
 
   .contact-me {
@@ -332,7 +336,7 @@ footer {
   }
 
   .contact-me h1 {
-    text-align-last: left;
+    text-align: left;
   }
 
   .contact-me__description {
@@ -378,5 +382,130 @@ footer {
     margin: 2em;
     display: flex;
     align-items: center;
+  }
+}
+
+@media (min-width: 1025px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-me::before {
+    min-height: 500px;
+    z-index: -1;
+    background: rgb(100, 134, 173);
+    background: linear-gradient(
+      174deg,
+      rgba(100, 134, 173, 1) 0%,
+      rgba(100, 134, 173, 1) 70%,
+      rgba(255, 255, 255, 0) 70.2%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .about-me::after {
+    min-height: 500px;
+    z-index: -2;
+    background: linear-gradient(
+      174deg,
+      rgb(230, 230, 230) 0%,
+      rgb(230, 230, 230) 70%,
+      rgb(240, 240, 240) 71%,
+      rgb(255, 255, 255) 72%,
+      rgba(255, 255, 255) 100%
+    );
+  }
+
+  .about-me__img {
+    margin-bottom: 0;
+    padding: 4em 5em;
+  }
+
+  .about-me__img .about-me__img-container {
+    margin: 0;
+    width: 40%;
+    max-width: 400px;
+  }
+
+  .about-me__img p {
+    top: auto;
+    right: 0;
+    left: 0;
+    bottom: 2px;
+    text-align: center;
+  }
+
+  .about-me__text {
+    background-color: #fff;
+    padding: 0em 1.5em;
+    margin: 0 5em;
+    overflow: auto;
+  }
+
+  .about-me__text h1 {
+    text-align: left;
+  }
+
+  .about-me__links {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 2em;
+  }
+
+  .about-me__links a {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .my-work {
+    overflow: auto;
+    padding: 0 5em;
+    margin-bottom: 5em;
+  }
+
+  .my-work h1 {
+    text-align: left;
+    font-size: 2.8rem;
+    margin-bottom: 0.5em;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card__text p {
+    font-size: 1.2rem;
+  }
+
+  footer .container {
+    padding: 4em 5em;
+  }
+
+  .contact-me {
+    margin: 0;
+    padding: 0;
+  }
+
+  .contact-me__description {
+    font-size: 1.4rem;
+    text-wrap: balance;
+  }
+
+  .contact-me__address,
+  .contact-me__phone-and-email {
+    font-size: 1.4rem;
+  }
+
+  .footer-img-container {
+    margin: 0;
+  }
+
+  .contact-me__links a {
+    width: 3rem;
   }
 }
