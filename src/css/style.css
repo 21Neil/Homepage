@@ -1,0 +1,215 @@
+@font-face {
+  font-family: Playfair Display;
+  src: url(../asset/font/Playfair_Display/PlayfairDisplay-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../asset/font/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 300;
+  src: url(../asset/font/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 200;
+  src: url(../asset/font/Roboto/Roboto-ExtraLight.ttf);
+}
+
+body {
+  font-family: "Roboto";
+  color: #222;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display";
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+p {
+  color: #777777;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.about-me {
+  margin-bottom: 8em;
+}
+
+.about-me__img {
+  padding: 2em;
+  position: relative;
+  background: rgb(100, 134, 173);
+  background: linear-gradient(
+    150deg,
+    rgba(100, 134, 173, 1) 0%,
+    rgba(100, 134, 173, 1) 60%,
+    rgba(255, 255, 255, 0) 60.2%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.about-me__img::before {
+  content: '';
+  position: absolute;
+  background: rgb(100, 134, 173);
+  inset: 0;
+  background: linear-gradient(
+    150deg,
+    rgb(230, 230, 230) 0%,
+    rgb(230, 230, 230) 60%,
+    rgb(240, 240, 240) 61%,
+    rgb(255, 255, 255) 62%,
+    rgba(255, 255, 255) 100%
+  );
+  z-index: -1;
+}
+
+.about-me__img .container {
+  position: relative;
+}
+
+.about-me__img img {
+  min-height: 400px;
+  object-fit: cover;
+}
+
+.about-me__img p {
+  font-family: "Playfair Display";
+  color: #fff;
+  font-size: 4rem;
+  position: absolute;
+  margin: 0;
+  bottom: 0.25em;
+  left: 0.5em;
+}
+
+.about-me__text {
+  padding: 0 1.5em;
+}
+
+.about-me__text p {
+  font-size: 1.6em;
+  line-height: 1.6em;
+}
+
+.about-me__links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.about-me__links a {
+  width: 2.5rem;
+}
+
+.my-work {
+  padding: 0 1.5em;
+}
+
+.card {
+  box-shadow: .185em .185em .625em rgb(205, 205, 205);
+  margin-bottom: 5em;
+}
+
+.card__text {
+  padding: 1em 1.5em;
+}
+
+.card__text h2 {
+  margin: 0 0.5em;
+}
+
+.card__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__links {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.card__links a {
+  width: 1.5rem;
+}
+
+.card__text p {
+  font-size: 1.2rem;
+}
+
+.contact-me {
+  padding: 0 1.5em;
+  background-color: rgb(100, 134, 173);
+  color: #fdfdfd;
+  overflow: auto;
+}
+
+.contact-me p {
+  color: #fdfdfd;
+}
+
+.contact-me__description {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 2em;
+}
+
+.contact-me__address,
+.contact-me__phone-and-email {
+  font-size: 1.2rem;
+  font-weight: 200;
+  margin-bottom: 2em;
+}
+
+.contact-me__address p {
+  margin: 0;
+}
+
+.contact-me__phone-and-email p {
+  margin: 0.5em 0;
+}
+
+.contact-me__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2em;
+  margin-bottom: 4em;
+}
+
+.contact-me__links a {
+  width: 3.125rem;
+}
+
+.footer-img-container img {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 400px;
+}
+
+@media (max-width: 300px) {
+  :root {
+    font-size: 12px;
+  }
+}
