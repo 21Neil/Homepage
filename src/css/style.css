@@ -239,10 +239,10 @@ footer {
     z-index: -1;
     background: rgb(100, 134, 173);
     background: linear-gradient(
-      160deg,
+      165deg,
       rgba(100, 134, 173, 1) 0%,
-      rgba(100, 134, 173, 1) 33%,
-      rgba(255, 255, 255, 0) 33.2%,
+      rgba(100, 134, 173, 1) 55%,
+      rgba(255, 255, 255, 0) 55.2%,
       rgba(255, 255, 255, 0) 100%
     );
   }
