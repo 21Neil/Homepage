@@ -509,3 +509,29 @@ footer {
     width: 3rem;
   }
 }
+
+@media (min-width: 2001px) {
+  .about-me::before {
+    background: rgb(100, 134, 173);
+    background: linear-gradient(
+      175.5deg,
+      rgba(100, 134, 173, 1) 0%,
+      rgba(100, 134, 173, 1) 70%,
+      rgba(255, 255, 255, 0) 70.2%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .about-me::after {
+    min-height: 500px;
+    z-index: -2;
+    background: linear-gradient(
+      175.5deg,
+      rgb(230, 230, 230) 0%,
+      rgb(230, 230, 230) 70%,
+      rgb(240, 240, 240) 71%,
+      rgb(255, 255, 255) 72%,
+      rgba(255, 255, 255) 100%
+    );
+  }
+}
